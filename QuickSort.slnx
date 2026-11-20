@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="QuickSort/QuickSort.vcxproj" Id="eddcb773-3e9e-4eb1-9d2b-3eeaf988c439" />
+  <Project Path="Tests/Tests.vcxproj" Id="7ff5ba17-f933-4833-bf82-958d592807f9" />
+</Solution>

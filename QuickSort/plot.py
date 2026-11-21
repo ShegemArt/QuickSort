@@ -6,7 +6,7 @@ n, insertion, quick = np.loadtxt("result.csv", delimiter=",", skiprows=1, unpack
 plt.plot(n, insertion, label="Сортировка вставками")
 plt.plot(n, quick, label="QuickSort")
 plt.xlabel("Длина массива")
-plt.ylabel("Среднее время сортировки, нс")
+plt.ylabel("Среднее время сортировки, мс")
 plt.legend()
 plt.grid(True)
 plt.savefig("result.png", dpi=150)

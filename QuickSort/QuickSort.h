@@ -6,7 +6,7 @@
 namespace algo {
 
     // Максимальная длина интервала, который досортировывается вставками.
-    constexpr std::ptrdiff_t kInsertionSortThreshold = 32;
+    constexpr std::ptrdiff_t kInsertionSortThreshold = 42;
 
     namespace detail {
         // Обмен элементов через перемещение

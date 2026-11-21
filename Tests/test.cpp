@@ -329,15 +329,15 @@ namespace {
     // ============================================================
 
     TEST(QuickSortTest, ArrayBelowInsertionThreshold) {
-        CheckReverseArraySort(31);
+        CheckReverseArraySort(41);
     }
 
     TEST(QuickSortTest, ArrayAtInsertionThreshold) {
-        CheckReverseArraySort(32);
+        CheckReverseArraySort(42);
     }
 
     TEST(QuickSortTest, ArrayAboveInsertionThreshold) {
-        CheckReverseArraySort(33);
+        CheckReverseArraySort(43);
     }
 
     // ============================================================

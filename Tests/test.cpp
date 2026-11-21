@@ -16,11 +16,7 @@
 
 namespace {
 
-    // ============================================================
-    // Вспомогательные типы
-    // ============================================================
-
-    // Пользовательская структура без операторов сравнения
+    // Структура без операторов сравнения
     struct Person {
         std::string name;
         int age;
@@ -30,7 +26,7 @@ namespace {
         }
     };
 
-    // Тип, который нельзя копировать, но можно перемещать
+    // Тип, который только можно перемещать
     struct MoveOnly {
         int value;
         std::unique_ptr<int> data;
@@ -46,8 +42,7 @@ namespace {
         MoveOnly& operator=(MoveOnly&&) noexcept = default;
     };
 
-    // Проверка сортировки массива заданного размера.
-    // Исходный массив формируется в обратном порядке.
+    // Проверка сортировки массива заданного размера
     void CheckReverseArraySort(std::size_t size) {
         std::vector<int> arr(size);
 
@@ -68,10 +63,6 @@ namespace {
 
         EXPECT_EQ(arr, expected);
     }
-
-    // ============================================================
-    // 1. Граничные случаи sort()
-    // ============================================================
 
     TEST(QuickSortTest, EmptyNullRange) {
         int* first = nullptr;
@@ -698,7 +689,7 @@ namespace {
             return a < b;
             };
 
-        int* pivot = algo::detail::partition_median3(
+        int* pivot = algo::detail::find_support_element(
             arr, arr + 7, comp
         );
 

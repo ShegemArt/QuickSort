@@ -20,9 +20,9 @@ namespace algo {
             *b = std::move(tmp);
         }
 
-        // Разбиение интервала из 3 и более элементов, опорный элемент - медиана первого, среднего и последнего.
+        // Выбирает опорный элемент
         template<typename T, typename Compare>
-        T* partition_median3(T* first, T* last, Compare& comp) {
+        T* find_support_element(T* first, T* last, Compare& comp) {
             T* mid = first + (last - first) / 2;
             T* back = last - 1;
             if (comp(*mid, *first)) {
@@ -85,7 +85,7 @@ namespace algo {
             insertion_threshold = 2;
         }
         while (last - first > insertion_threshold) {
-            T* pos = detail::partition_median3(first, last, comp);
+            T* pos = detail::find_support_element(first, last, comp);
             if (pos - first < last - (pos + 1)) {
                 quick_sort(first, pos, comp, insertion_threshold);
                 first = pos + 1;
@@ -98,7 +98,7 @@ namespace algo {
         insertion_sort(first, last, comp);
     }
 
-    // Сортировка из задания, comp(a, b) возвращает true, если a должен стоять перед b.
+    // Гибридная сортировка
     template<typename T, typename Compare>
     void sort(T* first, T* last, Compare comp) {
         quick_sort(first, last, comp, kInsertionSortThreshold);
